@@ -16,17 +16,17 @@ It is just a nudge, and after understanding these simple codes, one can start wi
 in HPC domain.
 
 Sample programs for following libraries are provided here: 
- ** CUDA
- ** OpenMP
- ** Cilk
- ** OpenCL
- ** MPI 
- ** pthreads
+ 1. CUDA
+ 2. OpenMP
+ 3. Cilk
+ 4. OpenCL
+ 5. MPI 
+ 6. pthreads
 
-Certain PGAS models, Intel libs and Cuda Libs will be updated later.  
+In future, some  PGAS models, Intel libs and Cuda Libs will be updated too.   
 
 ## How
 every directory has makefile of its own, so after completing all dependency, run
-make 
+1. `make` 
 
 P.S: Do tinker with codes, and have fun with it. 
