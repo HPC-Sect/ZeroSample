@@ -1,0 +1,26 @@
+############################################################################
+	
+	
+File  		: README
+
+Description 	: API Calls
+
+Date         	: Aug 2011   
+
+#############################################################################
+ omp-hello-world.c
+ omp-unique-threadid.c
+ omp-recurrence.c
+ omp-sumof-elements.c
+ omp-sumof-elements-reduction.c
+ omp-loop-carried-depend.c  
+ omp-matmat-schedule.c  
+ omp-shared-private-data.c
+ omp-workshare-section.c
+ omp-loop-invert.c  
+ omp-pi-calculation.c 
+ omp-pi-calculation-reduction.c
+
+
+
+

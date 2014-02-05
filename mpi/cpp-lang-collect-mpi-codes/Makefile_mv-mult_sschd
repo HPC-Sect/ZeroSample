@@ -1,0 +1,43 @@
+#
+#
+# *******************************************************************
+                             Oct 18 - 21, 2011
+# *******************************************************************
+#  
+#   Created             : Aug 2011
+#
+# *******************************************************************
+
+ALL: default
+
+###  User configurable options ###
+CC          = mpicxx
+CLINKER     = $(CC)
+
+MPILIB     = 
+LIBS       = -lm
+
+CFLAGS    = -DMPICH_IGNORE_CXX_SEEK
+
+
+### End User configurable options ###
+
+EXECS	  =  mv-mult-master_c mv-mult-slave_c 
+
+OBJECTS1= mpicpp-mv-mult-master-sschd.C
+OBJECTS2= mpicpp-mv-mult-slave-sschd.C
+
+default: $(EXECS)
+
+mv-mult-master_c: $(OBJECTS1) 
+	$(CLINKER) $(CFLAGS) -o mv-mult-master_c $(OBJECTS1) $(LIBS) $(MPILIB)
+mv-mult-slave_c:  $(OBJECTS2) 
+	$(CLINKER) $(CFLAGS) -o mv-mult-slave_c $(OBJECTS2) $(LIBS) $(MPILIB)
+
+
+.C.o:
+	$(CC) -c $*.C
+
+
+clean : 
+	$(RM) *.o core mv-mult-master_c mv-mult-slave_c 

@@ -1,0 +1,67 @@
+############################################################################
+	
+	Project : OpenMP-3.0 Example Codes Beta-v1.0
+        -----------------------------------------------
+
+File  		: README
+
+Description 	: File contains the List sample programs,compilation 
+                  & execution steps.
+
+Date         	: Aug 2011   
+
+#############################################################################
+
+
+Table of Contents
+____________________
+
+	[1] List of Sample Programs
+	[2] Compilation
+   	[3] Execution
+
+[1] List of Sample programs:
+-----------------------------
+    
+ 1)  mem-consistency-openmp3x.c :Simple example program to demonstrates the importance to  maintain the memory consistency while using openMP.
+
+ 2)  mem-cond-compile-openmp3x.c: Simple example program to illustrate the use of openmp conditional compilation using  _OPENMP macro.
+
+ 3)  icv-threads-openmp3x.c : Simple example program to demonstrate the use of OpenMP Library calls to change the 
+default values of the internal control variables.
+
+ 4)  parallel-construct-openmp3x.c:Simple example program to demonstrate the use of OpenMP parallel construct for coarse-grain parallelism i.e each thread in the parallel region decide which part of the global vector to work on based on the thread ID.
+
+ 5)  loop-collapse-openmp3x.c : Simple example program to demonstrates the use of openmp new feature "collapse" clause.
+In this example the iteration space over the loop index i and j is collapsed into the single large iteration space which then executed by the team of threads.
+
+ 6)    task-construct-alg-openmp3x.c:Simple example program to demonstrates the use of openmp new feature "task" and "taskwait" construct for the parllelization of recursive algorithum ( Fibnacci series)
+
+ 7)  link-list-alg-openmp3x.c : The program perform the link list traversal(irregular parallelism) in parallel using the openmp-3.0 feature task construct and openMP-2.5 approach and measure the time taken in both the approches.
+
+ 8)  tree-traverse-alg-openmp3x.c :The example program demonstrate the use of openmp new feature task construct to perform the parallelization of hierarchical algorithum (inorder tree traversal) and compare it with the openmp-2.5 approach using single construct & dispaly the time taken in both approcahes
+
+ 9)  loop-construct-matvect-openmp3x.c :The program perform the matrix vector multiplication in parallel using the openmp-3.0 feature collapse clause and nested parallel directive openMP-2.5 approach and display the time taken in both the approches.
+
+
+[2] Compilation 
+----------------
+    
+    Use makefile for compilation, do the appropriate
+    change in "Makefile" file according to your system 
+    like set the proper path for compiler etc.OpenMP flag
+    then use below command :
+
+                      [betatest@btts01 ] make
+    
+[3] Execution 
+--------------
+
+                      % ./<executable> [option]
+
+                        eg.
+
+                                % ./omp-collapse
+
+
+

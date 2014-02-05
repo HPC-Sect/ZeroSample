@@ -1,0 +1,46 @@
+#
+# *******************************************************************
+#		 C-DAC Tech Workshop PEMG-2010 
+#		     June 21 - 24, 2010
+#
+# *******************************************************************
+#   Modified            : April 2010
+#   Created             : May 2008
+#                         National PARAM Supercomputing Facility
+#
+# *******************************************************************
+#
+ALL: default
+
+###  User configurable options ###
+CC          = mpicxx
+CLINKER     = $(CC)
+
+
+MPILIB     = 
+LIBS       = -lm
+
+CFLAGS    = -DMPICH_IGNORE_CXX_SEEK
+
+
+### End User configurable options ###
+
+EXECS	  =  hello-world-master_c hello-world-slave_c 
+
+OBJECTS1 = mpicpp-hello-world-master.C             
+OBJECTS2 = mpicpp-hello-world-slave.C
+
+default: $(EXECS)
+
+hello-world-master_c: $(OBJECTS1) 
+	$(CLINKER) $(CFLAGS) -o hello-world-master_c $(OBJECTS1) $(LIBS) $(MPILIB)
+hello-world-slave_c:  $(OBJECTS2) 
+	$(CLINKER) $(CFLAGS) -o hello-world-slave_c $(OBJECTS2) $(LIBS) $(MPILIB)
+
+
+.C.o:
+	$(CC) -c $*.C
+
+
+clean : 
+	$(RM) *.o core hello-world-master_c hello-world-slave_c 

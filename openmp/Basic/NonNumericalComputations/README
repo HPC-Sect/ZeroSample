@@ -1,0 +1,16 @@
+############################################################################
+	
+File  		: README
+
+Description 	: Non numerical
+
+Date         	: Aug 2011   
+
+#############################################################################
+ omp-maxof-elements-critical.c 
+ omp-maxof-elements-lock.c
+ omp-prime-datarace-condt.c
+
+
+
+
