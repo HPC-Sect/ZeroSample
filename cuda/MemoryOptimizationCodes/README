@@ -1,0 +1,75 @@
+
+/************************************************************************
+			
+        Objective   :  A set of programs for Memory Optimisation 
+
+    	Modified    : April 2010
+                      
+	Author 	    : RarchK		
+
+***********************************************************************/
+
+###########################################################################              
+# 				README-Part-I
+#  ReadMe-Part-I text file has information about the following codes
+#
+#	blockPartitioning.cu*
+#	partitionCamping.cu*
+#	vectorModel.cu*
+#	warpDivergence.cu*
+#
+###########################################################################              
+
+                MEMORY OPTIMIZATION TECHNIQUES ON nVIDIA - GPUs
+
+
+	I.   List of Programs
+	II.  Compilation
+	III. Execution
+
+
+I. List of Programs
+----------------------------------------
+	
+1.cudaStream/ : 
+        Directory contains the source file cudaStream.cu which is a Stream Benchmark 
+        for GPU. It finds the sustainable bandwidth of global memory of GPU card by 
+        timing the four operations - Copy, Scale, Add and Triad.
+						 
+2. blockPartitioning.cu :
+        Demonstrates the global memory bandwidth differences for varying block sizes.
+
+3. vectorModel.cu : 
+        Demostrates that bandwidth can be improved if each thread handles more than one 
+        element by making use of GPU as 32-way SIMD processor.
+
+4. partitionCamping.cu : 
+       Demonstrates the difference in bandwidth achieved when blocks access 
+       global memory with and without partion camping.
+
+5. warpDivergence.cu : 
+       Demonstrates the difference in bandwidth achieved when threads within 
+       a warp follow different execution paths.
+
+II.  Compilation
+---------------------------------------------------------------------
+To compile cudaStream - 
+ 1. First go to the subdirectory cudaStream
+		$cd cudaStream
+ 2. Compile using make command
+   	$make
+
+  To compile other programs use the following command
+		$make
+
+
+III. Execution
+---------------------------------------------------------------------
+  To run a program, use the following commands
+		$./<ProgramName>
+
+  Eg: To run the program warpDivergence, first make and then run using the 
+      following command
+		$./warpDivergence	
+
+-----------------------------------------------------------------------------------

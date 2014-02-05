@@ -1,0 +1,64 @@
+/*******************************************************************
+
+File          :  README
+
+**********************************************************************/
+
+Description   :  This program is designed to demonstrate some strategy to hide bandwith latency
+                 and concurrent execution of some execution kernel through one stream, while
+                 memory copy of data set is also going one for the purpose of executon through
+                 other kernel.
+		
+		 Basically in this exercise we execute bellow kernel in no-stream and stream 
+		 approach and compare the total time required for each mode.
+		
+		kernle detail : 	
+			Kernels : A = A + B
+				  A = A(T)
+				  A = x * A   
+	                [Where A and B is Block Matrix]
+
+Input         : All input is controlled through predefined preprocessor directives included in 
+		source code. Bellow is the list of all important preprocessor directive .
+	
+		 REP_COUNT  -	This directive controls the number of repeatation of executing 
+				set of task[ execution kernel] before reporting avarage time 
+				for execution.
+		 MAT_DIMM   -	Directive to define input matrix dimension.
+		
+		 NSTREAM    -   Number of stream used in this exercise.
+		
+		 BLOCK_SIZE -   Define thread block diemsion.
+
+		
+Output	      :	This primary version of code with un-optimized kernel shows 3 to 4 percent
+                improvement in execution time because of applying ladder execution model 
+		approach.  The Output shows the coparision of execution time of executing same
+		set of task in both mode[ no-stream and stream ].
+
+		Output :
+		---------------------------------------------------------------------
+		 Kernels : A = A + B, A = A(T) , A = x * A   
+		           [Where A and B is Block Matrix]
+		 Matrix Dimension : 4096
+		 Number of execution stream  : 3
+		---------------------------------------------------------------------
+		 Starting Stream execution Block :   +3200ms (overall time=3200ms)
+		 End Stream execution Block :   +580ms (overall time=3780ms)
+
+		 Starting Non Stream Execution Block :   +0ms (overall time=3780ms)
+		 End Non Stream execution Block :   +630ms (overall time=4410ms)
+		---------------------------------------------------------------------
+
+
+How to Compile :
+		Type "make" at command prompt at home directory.
+			$ make
+
+
+How to run     : After compilation one executable "run" will be created at home location.
+		The type run at home location to execute the code.
+		
+			$./run
+
+				

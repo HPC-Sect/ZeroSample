@@ -1,0 +1,29 @@
+
+
+-----------------------------------------------------------------------------------------
+                 This is README for CudaBandwidthCal-v1.1.cu
+----------------------------------------------------------------------------------------
+	
+
+Objective: To calculate the bandwidth for pagebale/pinned memory from Host-to Device 
+           and Device-to-Host for a given range in MB/s.
+
+
+Compile and Execute :
+------------------------
+
+1. Compilation :
+
+	Go in particular directory and type 'make'.
+
+2. Execution :
+
+2.1. If you want to run with default size just give ./ <executable>
+
+2.2. If you want to run with data sizes of your choice and memory mode of default size then give
+
+    <executable> <memmode: 0-pageable , 1-pinned> <Start data size in bytes> <End data size in bytes> <Increment value in bytes>
+
+
+
+2.3 Output : Bandwidth in MB/s for a given data size

@@ -1,0 +1,120 @@
+
+/************************************************************************
+				
+	
+        Objective   :  A set of programs for basic cuda 
+                       
+    	Modified    : April 2010
+                      
+	Author 	    : RarchK		
+
+***********************************************************************/
+" README-Part-II " text file has information about the following
+
+	coalescedFloat3Access.cu*
+	deviceDetails.cu*
+	globalMemoryAccessPatterns.cu*
+	sharedMemoryReadingSameWord.cu*
+	sharedMemoryRestructuringDataTypes.cu*
+	sharedMemoryStridedAccessPatterns.cu*
+	SOAvsAOS.cu*
+
+
+  MEMORY OPTIMIZATION TECHNIQUES ON nVIDIA-GPUs
+  ---------------------------------------------
+
+	I.  List of Programs
+	II. Compilation
+	III.Execution
+	IV. Expected results
+
+I. List of Programs
+   -------------------
+
+
+  deviceDetails.cu -- 
+
+        contains example code to find out the number of devices that are present on the 
+        current system and also to query using the cuda API calls about the different 
+        properties of the devices.
+
+coalescedFloat3Access.cu -- 
+        contains example code to demonstrate the different access patterns of float3 
+        array in the global memory the corresponding advantages in terms of the 
+        bandwidth that is achievable
+
+globalMemoryAccessPatterns.cu -- 
+        contains example code to demonstrate the different access patterns of the global 
+        memory the corresponding advantages in terms of the bandwidth that is achievable
+
+sharedMemoryReadingSameWord.cu -- 
+        This code demonstrates achievable shared memory bandwidth while reading same word
+
+sharedMemoryStridedAccessPatterns.cu -- 
+        This code demonstrates bank conflicts that can occur while accessing the shared 
+        memory with strides
+
+sharedMemoryRestructuringDataTypes.cu -- 
+        This code demonstrates achievable shared memory bandwidth for different in-built 
+        data types
+
+SOAvsAOS.cu -- 
+        Example code to demonstrate the advantage of having Stucture of arrays rather 
+        than array of structures in the application while representing data the corresponding 
+        advantages in terms of the bandwidth of the global memory that is achievable
+
+        For more details about the programs see the documentation in "doc" folder
+
+
+II. Compilation
+-----------------
+
+to make: $$make
+
+      the make file generates the following executables:
+
+        deviceDetails, coalescedFloat3Access, 
+        globalMemoryAccessPatterns, sharedMemoryReadingSameWord, 
+        sharedMemoryStridedAccessPatterns, sharedMemoryRestructuringDataTypes, 
+        SOAvsAOS
+				
+
+III.Execution
+----------------
+
+to run:  $$./{executable}
+
+for example to run the deviceDetails executable
+			$$./deviceDetails
+
+
+
+IV. Expected results
+---------------------
+
+  "deviceDetails" --- 
+     Prints the different properties of the devices that are present on the system
+
+  "coalescedFloat3Access" --- 
+     prints the bandwidths that are achieved by the two Float3 access patterns - naive and 
+     share-memory assisted
+
+  "globalMemoryAccessPatterns" --- 
+     prints the bandwidths achieved by the six different global access patterns
+
+  "sharedMemoryReadingSameWord" --- 
+     prints the bandwidths got when, reading the same word and reading from different 
+     banks without any bank conflicts
+
+  "sharedMemoryStridedAccessPatterns" --- 
+     prints the bandwidths achieved while accessing shared memory with different strides
+
+  "sharedMemoryRestructuringDataTypes" --- 
+     prints the different bandwidths that are got while accessing the arrays of different 
+     inbuilt types
+
+  "SOAvsAOS" --- prints the achieved bandwidths when the same data is represented 
+     using Structure of arrays or Array of structures
+
+/***********************************************************************************
+
