@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------
+                        README for  hempa-hpc-opencl-v0.1
+---------------------------------------------------------------------------
+
+
+	The following are the details for using hempa-hpc-opencl-v0.1.
+              
+	Section 1 : Installation of hempa-hpc-opencl-v0.1.
+	Section 2 : Cleanup.
+   	Section 3 : Limitations.
+
+
+
+------------------------------------------------------------------------------
+Section 1 : Installation, Compilation and Execution of hempa-hpc-opencl-v0.1
+------------------------------------------------------------------------------
+
+  1.1.How to install hempa-hpc-opencl-v0.1
+       ---------------------
+
+       Untar the tar hempa-hpc-opencl-v0.1.tar using the following command
+
+              tar -xvf  hempa-hpc-opencl-v0.1
+
+  1.2. How to compile & Create Executable in  hempa-hpc-opencl-v0.1
+        --------------------------------------------------
+
+       Use the "Makefile" in the directory and use the following command
+       for compilation and creation of a executable same as of benchmark
+       in hempa-hpc-opencl-v0.1
+            	
+	make 
+
+  1.3. How to Execute in hempa-hpc-opencl-v0.1
+	---------------------------------------
+
+	The executable in  hempa-hpc-opencl-v0.1 is executed on target machine 
+	using the following command.
+
+	./executable name
+	
+	for example: ./MatMatMultLocalMemSP
+
+-------------------------------------------------------------------------
+Section 2 : Cleanup
+-----------------------------------------------------------------------
+
+To clean up the executable file, type
+                make clean
+
+---------------------------------------------------------------------------
+Section 3 :  Limitations
+--------------------------------------------------------------------------
+
+    1. Codes are designed for square matrices.
+    2. Codes are designed for single platform and single device.
+    3. The codes with local memory implementation Data sizes should be multiple of BLOCK_SIZE.
+
+Note:- SP: single precision , DP: double precision 
+       GM: global memory , LM: local memory
+
+-----------------------------------------------------------------------------------------------------------
